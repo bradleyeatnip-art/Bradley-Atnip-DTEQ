@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Battery Urban Design Portfolio</title>
+    <style>
+        /* CSS RESET & VARIABLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Aqua Blue Base Palette for Assignment 01 */
+            --marine-aqua: #0093B2;
+            --shallow-turquoise: #4EBABA;
+            --abyssal-navy: #0D1F2D;
+            --infrastructure-amber: #E5A93C;
+            --topographic-foam: #E8F4F8;
+            --card-surface: #142838;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--abyssal-navy);
+            color: var(--topographic-foam);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* STICKY HEADER NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(13, 31, 45, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--marine-aqua);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--shallow-turquoise);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--topographic-foam);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--infrastructure-amber);
+        }
+
+        /* SECTION LAYOUTS */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(78, 186, 186, 0.2);
+        }
+
+        /* ASSIGNMENT 01: AQUA BLUE HERO SECTION */
+        #investigation {
+            background-color: var(--marine-aqua);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        #investigation h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--topographic-foam);
+        }
+
+        #investigation .subtitle {
+            font-size: 1.1rem;
+            color: var(--topographic-foam);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--shallow-turquoise);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* MEDIA CONTAINERS & CARDS */
+        .card {
+            background-color: var(--card-surface);
+            border: 1px solid var(--marine-aqua);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .embed-container {
+            width: 100%;
+            height: 450px;
+            background-color: var(--abyssal-navy);
+            border: 2px dashed var(--shallow-turquoise);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--shallow-turquoise);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* HORIZONTAL SCROLL CONTAINER (ASSIGNMENT 02) */
+        .horizontal-scroll-wrapper {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            scrollbar-color: var(--shallow-turquoise) var(--abyssal-navy);
+        }
+
+        .drawing-pan-item {
+            min-width: 600px;
+            height: 300px;
+            background-color: var(--card-surface);
+            border: 1px solid var(--shallow-turquoise);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* GRID LAYOUT FOR GALLERY (ASSIGNMENT 04) */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .badge {
+            background-color: var(--infrastructure-amber);
+            color: var(--abyssal-navy);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            color: var(--shallow-turquoise);
+            border-top: 1px solid rgba(78, 186, 186, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY SITE NAVIGATION -->
+    <header>
+        <div class="site-title">The Battery Portfolio</div>
+        <nav>
+            <ul>
+                <li><a href="#investigation">01 / Initial Investigation</a></li>
+                <li><a href="#constructing-past">02 / Constructing Past</a></li>
+                <li><a href="#present-zines">03 / Present Zines</a></li>
+                <li><a href="#plural-futures">04 / Plural Futures</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 01 / INITIAL INVESTIGATION (Aqua Blue Base Theme) -->
+        <section id="investigation">
+            <span class="badge">Assignment 01</span>
+            <h1>Initial Investigation of The Battery</h1>
+            <p class="subtitle">Geospatial analysis, 2100 floodplain projections, and subterranean transit vulnerability in Lower Manhattan.</p>
+            
+            <div class="card" style="background-color: rgba(13, 31, 45, 0.85);">
+                <h3 style="color: var(--shallow-turquoise);">Interactive QGIS Spatial Map</h3>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">GIS mapping layers detailing coastal inundation zones relative to MTA subway entry points and depth profiles.</p>
+                <!-- Replace src with your actual hosted map link or iFrame embed -->
+                <div class="embed-container">
+                    [ Interactive QGIS Map Embed / WebGIS Frame ]
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / CONSTRUCTING THE PAST -->
+        <section id="constructing-past">
+            <h2 class="section-title">02 / Constructing the Past</h2>
+            <p>Historical vector analysis and high-resolution panoramic study: <em>"The Long Drawing on Manhattan"</em>.</p>
+            
+            <div class="card">
+                <h3>The Long Drawing on Manhattan (Pan Viewer)</h3>
+                <p style="font-size: 0.9rem; color: var(--shallow-turquoise);">Scroll horizontally to view the full continuous drawing sequence.</p>
+                <div class="horizontal-scroll-wrapper">
+                    <div class="drawing-pan-item">[ Panel Segment 1: Shoreline Evolution ]</div>
+                    <div class="drawing-pan-item">[ Panel Segment 2: Architectural Sections ]</div>
+                    <div class="drawing-pan-item">[ Panel Segment 3: Historical Infill ]</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 / PRESENT ZINES -->
+        <section id="present-zines">
+            <h2 class="section-title">03 / Present Zines</h2>
+            <p>Digital reader focusing on NYC service workers, spatial interactions, and MTA transit patterns.</p>
+            
+            <div class="card">
+                <h3>Digital Zine Reader — <em>EVERYONE ELSE</em></h3>
+                <p style="font-size: 0.9rem; margin-bottom: 1rem;">Spotlight profiles: Samir, Michael, Amy, Ahmed, Shonda, Kevin, Steven, Adam, Afzal, Officer Megan, Mate Joseph, and Joe.</p>
+                <!-- Replace with Issuu, PDF viewer, or interactive flipbook embed -->
+                <div class="embed-container">
+                    [ Digital PDF Flipbook / Interactive Zine Embed ]
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 / PLURAL FUTURES -->
+        <section id="plural-futures">
+            <h2 class="section-title">04 / Plural Futures</h2>
+            <p>Board game design, physical playtesting components, and future climate adaptation scenarios.</p>
+            
+            <div class="grid-2col">
+                <div class="card">
+                    <h3>Board Game Components</h3>
+                    <div class="embed-container" style="height: 250px;">
+                        [ Photo Gallery / Spec Sheet ]
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Playtesting & Rules</h3>
+                    <div class="embed-container" style="height: 250px;">
+                        [ Video Embed / Gameplay Mechanics ]
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Urban Design Portfolio — The Battery, Lower Manhattan</p>
+    </footer>
+
+</body>
+</html>

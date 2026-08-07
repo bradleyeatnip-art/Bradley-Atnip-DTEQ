@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bradley Atnip - Investigation of the Battery</title>
+    <style>
+        :root {
+            --shallow-turquoise: #38b6ff;
+            --infrastructure-amber: #ffbd59;
+            --dark-bg: #0d1f2d;
+            --body-bg: #08121a;
+            --card-bg: rgba(13, 31, 45, 0.85);
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #d0d0d0;
+            --border-turquoise: rgba(56, 182, 255, 0.2);
+            --border-turquoise-hover: rgba(56, 182, 255, 0.6);
+            --radius-md: 8px;
+            --radius-sm: 6px;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--shallow-turquoise);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .header-title {
+            color: var(--shallow-turquoise);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        main {
+            padding: 2.5rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Site-wide Summary Banners (Opening & Closing) */
+        .site-summary {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-turquoise);
+            border-left: 4px solid var(--shallow-turquoise);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .site-summary.closing {
+            margin-top: 3.5rem;
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            color: var(--shallow-turquoise);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            border: 1px solid var(--border-turquoise);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .card:hover {
+            border-color: var(--border-turquoise-hover);
+            box-shadow: 0 4px 20px rgba(56, 182, 255, 0.1);
+        }
+
+        .badge {
+            background-color: var(--infrastructure-amber);
+            color: #000000;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-heading {
+            color: var(--shallow-turquoise);
+            margin-top: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .card-subtext {
+            font-size: 0.95rem;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-turquoise);
+            object-fit: cover;
+            display: block;
+        }
+
+        section {
+            margin-top: 3.5rem;
+        }
+
+        section:first-of-type {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header role="banner">
+        <div class="header-title">Bradley Atnip - Investigation of the Battery</div>
+    </header>
+
+    <main role="main">
+        <!-- OVERALL WEBSITE SUMMARY (OPENING) -->
+        <div class="site-summary">
+            It was a privilege to investigate one of the most iconic parts of New York City. My professors assigned my team to The Battery, which encompasses FiDi, TriBeCa, and Battery Park City. This series of projects highlights the layers of investigation we conducted to develop an in-depth understanding of the site.
+        </div>
+
+        <!-- 01 / INITIAL INVESTIGATION -->
+        <section id="investigation" aria-labelledby="investigation-heading">
+            <h1 id="investigation-heading" class="section-title">01 / Initial Investigation of The Battery</h1>
+            
+            <div class="card">
+                <span class="badge">DTECH</span>
+                <h2 class="card-heading">Interactive QGIS Spatial Map</h2>
+                <p class="card-subtext">
+                    By learning QGIS in DTECH, The Battery was investigated through the lens of understanding land value and flood risk. The following assignment highlights my process of developing a general understanding of the site’s climate risks.
+                </p>
+
+                <div class="image-container">
+                    <img src="investigation%201.png" alt="QGIS analysis map displaying coastal inundation levels and MTA transit entry points in Lower Manhattan">
+                    <img src="investigation%202.png" alt="QGIS subterranean depth profile analysis around The Battery transit infrastructure">
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 / CONSTRUCTING THE PAST -->
+        <section id="constructing-past" aria-labelledby="past-heading">
+            <h2 id="past-heading" class="section-title">02 / Constructing the Past</h2>
+            
+            <div class="card">
+                <span class="badge">Urban Design Studio</span>
+                <h3 class="card-heading">Layered Site History Scroll</h3>
+                <p class="card-subtext">
+                    For this project, my teammates and I investigated the history of The Battery through a series of layers. We rendered a nine-foot scroll that dives into many of the minute elements within the site’s history and context. Our argument demonstrates how the site’s opportunities have also led to its vulnerabilities, revealing how its conditions can shift from positive to negative.
+                </p>
+            </div>
+        </section>
+
+        <!-- 03 / ZINE OF THE PRESENT -->
+        <section id="zine-present" aria-labelledby="zine-heading">
+            <h2 id="zine-heading" class="section-title">03 / Zine of the Present</h2>
+            
+            <div class="card">
+                <span class="badge">Urban Design Studio</span>
+                <h3 class="card-heading">Workers of Lower Manhattan Zine</h3>
+                <p class="card-subtext">
+                    The zine highlights the everyday workers of Lower Manhattan. We conducted a series of interviews and site observations to craft a document that brings attention to this often unseen group within The Battery.
+                </p>
+            </div>
+        </section>
+
+        <!-- 04 / PLURAL FUTURES -->
+        <section id="plural-futures" aria-labelledby="futures-heading">
+            <h2 id="futures-heading" class="section-title">04 / Plural Futures</h2>
+            
+            <div class="card">
+                <span class="badge">Urban Design Studio</span>
+                <h3 class="card-heading">Waterfront Wager Board Game</h3>
+                <p class="card-subtext">
+                    For Plural Futures, our board game, Waterfront Wager, highlights agency decision-making and negotiation along a flooding waterfront. As the game progresses and flooding occurs, players must work together to retain the properties they have acquired.
+                </p>
+            </div>
+        </section>
+
+        <!-- OVERALL WEBSITE SUMMARY (CLOSING) -->
+        <div class="site-summary closing">
+            Overall, these four exercises enabled me to develop a deeper understanding of the multiple layers of social and environmental complexity that define The Battery.
+        </div>
+    </main>
+
+</body>
+</html>

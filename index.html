@@ -20,11 +20,16 @@
             --radius-sm: 6px;
         }
 
-        body {
+        html, body {
             margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
             background-color: var(--body-bg);
             color: var(--text-primary);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
             line-height: 1.6;
         }
 
@@ -34,7 +39,7 @@
             border-bottom: 1px solid var(--shallow-turquoise);
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
 
         .header-title {
@@ -49,9 +54,9 @@
             padding: 2.5rem 1.5rem;
             max-width: 1000px;
             margin: 0 auto;
+            display: block;
         }
 
-        /* Site-wide Summary Banners (Opening & Closing) */
         .site-summary {
             background-color: var(--card-bg);
             border: 1px solid var(--border-turquoise);
@@ -66,7 +71,7 @@
 
         .site-summary.closing {
             margin-top: 3.5rem;
-            margin-bottom: 0;
+            margin-bottom: 2rem;
         }
 
         .section-title {
@@ -135,13 +140,14 @@
 
         section {
             margin-top: 3.5rem;
+            display: block;
         }
 
         section:first-of-type {
             margin-top: 0;
         }
 
-        /* 16-Page Zine Slideshow Styling */
+        /* Interactive Slideshow Styling */
         .slideshow-container {
             position: relative;
             width: 100%;
@@ -195,7 +201,7 @@
             font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
-            transition: opacity 0.2s ease, background-color 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .btn:hover:not(:disabled) {
@@ -224,14 +230,14 @@
     </header>
 
     <main role="main">
-        <!-- OVERALL WEBSITE SUMMARY (OPENING) -->
+        <!-- OPENING SUMMARY -->
         <div class="site-summary">
             It was a privilege to investigate one of the most iconic parts of New York City. My professors assigned my team to The Battery, which encompasses FiDi, TriBeCa, and Battery Park City. This series of projects highlights the layers of investigation we conducted to develop an in-depth understanding of the site.
         </div>
 
         <!-- 01 / INITIAL INVESTIGATION -->
-        <section id="investigation" aria-labelledby="investigation-heading">
-            <h1 id="investigation-heading" class="section-title">01 / Initial Investigation of The Battery</h1>
+        <section id="investigation">
+            <h1 class="section-title">01 / Initial Investigation of The Battery</h1>
             
             <div class="card">
                 <span class="badge">DTECH</span>
@@ -248,8 +254,8 @@
         </section>
 
         <!-- 02 / CONSTRUCTING THE PAST -->
-        <section id="constructing-past" aria-labelledby="past-heading">
-            <h2 id="past-heading" class="section-title">02 / Constructing the Past</h2>
+        <section id="constructing-past">
+            <h2 class="section-title">02 / Constructing the Past</h2>
             
             <div class="card">
                 <span class="badge">Urban Design Studio</span>
@@ -261,8 +267,8 @@
         </section>
 
         <!-- 03 / ZINE OF THE PRESENT -->
-        <section id="zine-present" aria-labelledby="zine-heading">
-            <h2 id="zine-heading" class="section-title">03 / Zine of the Present</h2>
+        <section id="zine-present">
+            <h2 class="section-title">03 / Zine of the Present</h2>
             
             <div class="card">
                 <span class="badge">Urban Design Studio</span>
@@ -271,7 +277,7 @@
                     The zine highlights the everyday workers of Lower Manhattan. We conducted a series of interviews and site observations to craft a document that brings attention to this often unseen group within The Battery.
                 </p>
 
-                <!-- 16-Page Zine Interactive Slideshow -->
+                <!-- 16-Page Zine Slideshow -->
                 <div class="slideshow-container">
                     <div class="slide-wrapper">
                         <div class="slide active"><img src="page-01.jpg" alt="Page 1 - Cover"></div>
@@ -302,8 +308,8 @@
         </section>
 
         <!-- 04 / PLURAL FUTURES -->
-        <section id="plural-futures" aria-labelledby="futures-heading">
-            <h2 id="futures-heading" class="section-title">04 / Plural Futures</h2>
+        <section id="plural-futures">
+            <h2 class="section-title">04 / Plural Futures</h2>
             
             <div class="card">
                 <span class="badge">Urban Design Studio</span>
@@ -322,7 +328,7 @@
             </div>
         </section>
 
-        <!-- OVERALL WEBSITE SUMMARY (CLOSING) -->
+        <!-- CLOSING SUMMARY -->
         <div class="site-summary closing">
             Overall, these four exercises enabled me to develop a deeper understanding of the multiple layers of social and environmental complexity that define The Battery.
         </div>
@@ -352,7 +358,6 @@
             updateSlideshow();
         }
 
-        // Keyboard Arrow Navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft' && currentSlide > 0) {
                 changeSlide(-1);
@@ -361,7 +366,6 @@
             }
         });
 
-        // Initialize State
         updateSlideshow();
     </script>
 
